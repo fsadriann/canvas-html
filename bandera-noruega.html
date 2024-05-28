@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bandera Noruega</title>
+</head>
+<body>
+    <h1>Bandera</h1>
+    <canvas id="norwegianFlag" width="440" height="320"></canvas>
+    <script>
+        // Obtener el elemento canvas y su contexto
+        const canvas = document.getElementById('norwegianFlag');
+        const ctx = canvas.getContext('2d');
+
+        // Dimensiones de la bandera
+        const anchoBandera = canvas.width;
+        const altoBandera = canvas.height;
+
+        // Dimensiones de las secciones
+        const whiteVerticalWidth = anchoBandera * 4 / 22;
+        const whiteHorizontalHeight = altoBandera * 4 / 16;
+        const blueVerticalWidth = anchoBandera * 2 / 22;
+        const blueHorizontalHeight = altoBandera * 2 / 16;
+
+        // Colores de la bandera
+        const red = '#Bb0C2F';
+        const white = '#FFFFFF';
+        const blue = '#0833a2';
+
+        // Dibujar fondo rojo (todo el canvas)
+        ctx.fillStyle = red;
+        ctx.fillRect(0, 0, anchoBandera, altoBandera);
+
+        // Dibujar la cruz blanca horizontal
+        ctx.fillStyle = white;
+        ctx.fillRect(0, altoBandera * 6 / 16, anchoBandera, whiteHorizontalHeight);
+
+        // Dibujar la cruz blanca vertical
+        ctx.fillStyle = white;
+        ctx.fillRect(anchoBandera * 6 / 22, 0, whiteVerticalWidth, altoBandera);
+
+        // Dibujar la cruz azul horizontal
+        ctx.fillStyle = blue;
+        ctx.fillRect(0, altoBandera * 7 / 16, anchoBandera, blueHorizontalHeight);
+
+        // Dibujar la cruz azul vertical
+        ctx.fillStyle = blue;
+        ctx.fillRect(anchoBandera * 7 / 22, 0, blueVerticalWidth, altoBandera);
+    </script>
+</body>
+</html>
